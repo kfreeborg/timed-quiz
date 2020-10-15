@@ -17,30 +17,44 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  min-height: auto;
+  width: 100vw;
+  height: 100vh;
 }
 
 header{
   background-color: var(--tertiary);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: center;
   margin: 10px;
   padding: 10px;
-}
-
-main {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 20px;
 }
 
-footer {
+main {
+  padding: 20px;
   display: flex;
-  justify-content: right;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
+.container {
+  width: 800px;
+  max-width: 80%;
+  background-color: var(--tertiary);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px 1px;
+}
+
+.btn-grid {
+  display: grid;
+  gap: 5px;
+  margin: 20px 0;
+}
+
+.btn {
+  
+}
+
   
