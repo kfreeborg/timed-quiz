@@ -12,7 +12,7 @@ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 
 body {
   color: var(--primary);
-  background-color: lightgray;
+  background-color: whitesmoke;
   margin: 0;
   padding: 0;
   display: flex;
@@ -88,7 +88,7 @@ main {
   align-items: center;
 }
 
-.btn-hide {
+.hide {
   display: none;
 }
 
