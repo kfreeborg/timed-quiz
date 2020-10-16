@@ -54,7 +54,7 @@ main {
 }
 
 .btn {
-  color: var(--tertiary);
+  color: whitesmoke;
   border-radius: 5px;
   border: 1px, solid, #6C5B7B;
   background-color: #6C5B7B;
@@ -74,6 +74,22 @@ main {
 .wrong {
   background-color: red;
   color: var(--primary);
+}
+
+.start-btn, .next-btn {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-hide {
+  display: none;
 }
 
   
