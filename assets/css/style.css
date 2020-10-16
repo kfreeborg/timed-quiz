@@ -4,7 +4,7 @@
 
 :root {
 --primary: #355c7d;
---secondary: #C06C84;
+--secondary: #F8B195;
 --tertiary: #F67280;
 font-size: 100%;
 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
@@ -54,7 +54,26 @@ main {
 }
 
 .btn {
-  
+  color: var(--tertiary);
+  border-radius: 5px;
+  border: 1px, solid, #6C5B7B;
+  background-color: #6C5B7B;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.btn:hover {
+  border-color: black;
+}
+
+.correct {
+  background-color: green;
+  color: white;
+}
+
+.wrong {
+  background-color: red;
+  color: var(--primary);
 }
 
   
