@@ -6,7 +6,11 @@ var answerEl = document.getElementById("answer-buttons");
 var yourScoreEl = document.getElementById("your-score");
 var saveScoreEl = document.getElementById("save-score");
 var enterInitialsEl = document.getElementById("enter-initials");
-var submitButton = document.getElementById("store-score");
+var initialsPage = document.getElementById("initials-storage");
+var scoresPage = document.getElementById("score-storage");
+var showScoreEl = document.getElementById("score-container");
+
+//var submitButton = document.getElementById("store-score");
 
 
 //var choiceEl = Array.from(document.getElementsByClassName("choice"));
@@ -79,31 +83,40 @@ function showScore() {
   document.getElementById("your-score").innerHTML = "Your score is " + score + "! Would you like to save results?";
 };
 
-function saveResults() {
-
-};
-
 saveScoreEl.addEventListener("click", function (event) {
   event.preventDefault();
 
-  //var finalScore = document.querySelector("#your-score").score;
   var initials = document.querySelector("#enter-initials").value;
 
   localStorage.setItem("store-score", score);
   localStorage.setItem("user-initials", initials);
+
+  // return window.location.assign("./highscore.html");
+  renderLastRegistered();
+
+
 });
 
-// function renderLastRegistered() {
-//   var storeScore = localStorage.getItem('email');
-//   var initials = localStorage.getItem('password');
+function renderLastRegistered() {
+  var storeScore = localStorage.getItem("store-score");
+  var initials = localStorage.getItem("user-initials");
 
-//   if (initials === null) {
-//     return;
-//   }
+  initialsPage.textContent = initials;
+  scoresPage.textContent = storeScore;
 
-//   userEmailSpan.textContent = storeScore;
-//   userPasswordSpan.textContent = initials;
-// }
+  showScoreEl.classList.remove("hide");
+  saveScoreEl.classList.add("hide");
+  yourScoreEl.classList.add("hide");
+  enterInitialsEl.classList.add("hide");
+  startButtonEl.classList.remove("hide");
+
+
+
+
+  // startButton.innerText = "Restart";
+  // startButton.classList.remove("hide");
+};
+
 
 var questions = [
   {

@@ -16,9 +16,9 @@
     <h1>Ready to test your knowledge?</h1>
   </header>
 
-  <div>
-    <a href="./highscore.html" target=_blank>High Scores</a>
-  </div>
+  <!-- <div>
+    <a href="./highscore.html">High Scores</a>
+  </div> -->
 
   <main>
 
@@ -33,10 +33,21 @@
         <!-- <button id="next-btn" class="next-btn btn hide">Next</button> -->
       </div>
       <div class="end-score">
-        <h2 id="your-score" class="hide">Your Score</h2>
+        <h2 id="your-score" class="hide"></h2>
         <input type="text" id="enter-initials" name="score-initials" class="text-input hide"
           placeholder="Enter Initials" />
         <button class="btn hide" id="save-score" type="submit">Submit</button>
+      </div>
+
+      <div class="score-container hide" id="score-container">
+        <div class="initials-container">
+          <h2 class="score">Initials</h2>
+          <p id="initials-storage"></p>
+        </div>
+        <div class="scores-container">
+          <h2 class="score">Score</h2>
+          <p id="score-storage"></p>
+        </div>
       </div>
 
     </div>
