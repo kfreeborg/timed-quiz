@@ -16,29 +16,30 @@
     <h1>Ready to test your knowledge?</h1>
   </header>
 
+  <div>
+    <a>High Scores</a>
+  </div>
+
   <main>
+
     <div class="container">
       <div id="question-container" class="hide">
         <div id="question"></div>
         <div id="answer-buttons" class="btn-grid">
-          <!-- <button class="btn choice" id="choice"></button>
-          <button class="btn choice" id="choice"></button>
-          <button class="btn choice" id="choice"></button>
-          <button class="btn choice" id="choice"></button> -->
         </div>
       </div>
       <div class="buttons">
         <button id="start-btn" class="start-btn btn">Start</button>
-        <button id="next-btn" class="next-btn btn hide">Next</button>
+        <!-- <button id="next-btn" class="next-btn btn hide">Next</button> -->
       </div>
+      <div class="end-score">
+        <h2 id="your-score" class="hide">Your Score</h2>
+        <input type="text" id="enter-initials" name="score-initials" class="text-input hide"
+          placeholder="Enter Initials" />
+        <button class="btn hide" id="save-score" type="submit">Submit</button>
+      </div>
+
     </div>
-    <!-- <section>
-      <p>What is HTML?</p>
-      <p>What is CSS?</p>
-      <p>What is JavaScript?</p>
-      <p>What is API?</p>
-      <p>How do you get through this course without going crazy?</p>
-    </section> -->
 
   </main>
 

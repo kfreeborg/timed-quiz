@@ -3,6 +3,10 @@ var nextButtonEl = document.getElementById("next-btn");
 var questionContainerEl = document.getElementById("question-container");
 var questionEl = document.getElementById("question");
 var answerEl = document.getElementById("answer-buttons");
+var yourScoreEl = document.getElementById("your-score");
+var saveScoreEl = document.getElementById("save-score");
+var enterInitialsEl = document.getElementById("enter-initials");
+
 //var choiceEl = Array.from(document.getElementsByClassName("choice"));
 startButtonEl.addEventListener("click", startQuiz);
 
@@ -27,57 +31,65 @@ function nextQuestion() {
   var node = document.getElementById("answer-buttons");
   node.innerHTML = "";
   showQuestion(currentQuestion);
-  // nextButtonEl.classList.add("hide");
 };
 
-//answer
 
 function showQuestion() {
+
   questionCounter += 1;
   var questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
   questionEl.innerText = currentQuestion.ques;
   console.log(questionCounter)
 
+  availableQuestions.splice(questionIndex, 1);
+
   currentQuestion.options.forEach((option) => {
 
     var button = document.createElement("button");
     button.textContent = option;
     button.classList.add("btn");
+    button.classList.add("answer");
     answerEl.appendChild(button);
 
-    if (availableQuestions.length === 0) {
-      console.log("end");
-
-    }
-
-
+    // acceptingAnswers = true;
 
     button.addEventListener("click", (e) => {
-
-
-      // acceptingAnswers = true;
-      // if (!acceptingAnswers) return;
-
-      // acceptingAnswers = false;
-      // var selectedChoice = e.target;
-      // var selectedAnswer = selectedChoice.dataset.answer;
+      var answer = button.textContent;
+      if (answer === currentQuestion.answer) {
+        score += 1;
+      } else {
+        // timer to go down faster
+      };
       nextQuestion();
     });
   });
-};
-
-
-function selectAnswer() {
-  // if
-  // var selectedButton = event.target;
-  // var correct = selectedButton.dataset.correct;
-  // setStatusClass(document.body, correct);
+  if (availableQuestions.length === 0) {
+    endScore();
+  };
 };
 
 
 
-// highscore
+// function selectAnswer() {
+
+
+//   // if
+//   // var selectedButton = event.target;
+//   // var correct = selectedButton.dataset.correct;
+//   // setStatusClass(document.body, correct);
+// };
+
+function endScore() {
+  questionContainerEl.classList.add("hide");
+  yourScoreEl.classList.remove("hide");
+  enterInitialsEl.classList.remove("hide");
+  saveScoreEl.classList.remove("hide");
+
+  // var yourScore = score;
+  // yourScoreEl.appendChild(score);
+  // console.log(score);
+};
 
 var questions = [
   {

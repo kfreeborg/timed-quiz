@@ -38,6 +38,13 @@ main {
   flex-direction: column;
 }
 
+a, footer {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin: 20px;
+}
+
 .container {
   width: 800px;
   max-width: 80%;
