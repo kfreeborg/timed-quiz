@@ -6,6 +6,8 @@ var answerEl = document.getElementById("answer-buttons");
 var yourScoreEl = document.getElementById("your-score");
 var saveScoreEl = document.getElementById("save-score");
 var enterInitialsEl = document.getElementById("enter-initials");
+var submitButton = document.getElementById("store-score");
+
 
 //var choiceEl = Array.from(document.getElementsByClassName("choice"));
 startButtonEl.addEventListener("click", startQuiz);
@@ -39,7 +41,6 @@ function showQuestion() {
   var questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
   questionEl.innerText = currentQuestion.ques;
-  console.log(questionCounter)
 
   availableQuestions.splice(questionIndex, 1);
 
@@ -77,6 +78,32 @@ function endScore() {
 function showScore() {
   document.getElementById("your-score").innerHTML = "Your score is " + score + "! Would you like to save results?";
 };
+
+function saveResults() {
+
+};
+
+saveScoreEl.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  //var finalScore = document.querySelector("#your-score").score;
+  var initials = document.querySelector("#enter-initials").value;
+
+  localStorage.setItem("store-score", score);
+  localStorage.setItem("user-initials", initials);
+});
+
+// function renderLastRegistered() {
+//   var storeScore = localStorage.getItem('email');
+//   var initials = localStorage.getItem('password');
+
+//   if (initials === null) {
+//     return;
+//   }
+
+//   userEmailSpan.textContent = storeScore;
+//   userPasswordSpan.textContent = initials;
+// }
 
 var questions = [
   {
