@@ -33,7 +33,6 @@ function nextQuestion() {
   showQuestion(currentQuestion);
 };
 
-
 function showQuestion() {
 
   questionCounter += 1;
@@ -52,8 +51,6 @@ function showQuestion() {
     button.classList.add("answer");
     answerEl.appendChild(button);
 
-    // acceptingAnswers = true;
-
     button.addEventListener("click", (e) => {
       var answer = button.textContent;
       if (answer === currentQuestion.answer) {
@@ -69,26 +66,16 @@ function showQuestion() {
   };
 };
 
-
-
-// function selectAnswer() {
-
-
-//   // if
-//   // var selectedButton = event.target;
-//   // var correct = selectedButton.dataset.correct;
-//   // setStatusClass(document.body, correct);
-// };
-
 function endScore() {
   questionContainerEl.classList.add("hide");
   yourScoreEl.classList.remove("hide");
   enterInitialsEl.classList.remove("hide");
   saveScoreEl.classList.remove("hide");
+  showScore();
+};
 
-  // var yourScore = score;
-  // yourScoreEl.appendChild(score);
-  // console.log(score);
+function showScore() {
+  document.getElementById("your-score").innerHTML = "Your score is " + score + "! Would you like to save results?";
 };
 
 var questions = [
