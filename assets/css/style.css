@@ -44,7 +44,7 @@ main {
   flex-direction: column;
 }
 
-a, footer {
+h3, footer {
   display: flex;
   justify-content: left;
   align-items: left;

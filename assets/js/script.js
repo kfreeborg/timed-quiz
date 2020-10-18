@@ -9,11 +9,8 @@ var enterInitialsEl = document.getElementById("enter-initials");
 var initialsPage = document.getElementById("initials-storage");
 var scoresPage = document.getElementById("score-storage");
 var showScoreEl = document.getElementById("score-container");
+var timerEl = document.getElementById("countdown");
 
-//var submitButton = document.getElementById("store-score");
-
-
-//var choiceEl = Array.from(document.getElementsByClassName("choice"));
 startButtonEl.addEventListener("click", startQuiz);
 
 var currentQuestion = {};
@@ -23,20 +20,33 @@ var questionCounter = 0;
 var availableQuestions = [];
 
 function startQuiz() {
+  countdown();
   startButtonEl.classList.add("hide");
   questionContainerEl.classList.remove("hide");
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
+
   nextQuestion();
 };
 
-// timer
+var timeLeft = 60
 
-function nextQuestion() {
-  var node = document.getElementById("answer-buttons");
-  node.innerHTML = "";
-  showQuestion(currentQuestion);
+function countdown() {
+
+  var timeInterval = setInterval(function () {
+    if (timeLeft >= 1) {
+      timerEl.textContent = timeLeft;
+      timeLeft -= 1;
+    } else if (timeLeft === 1) {
+      timerEl.textContent = timeLeft + ' second remaining';
+      timeLeft--;
+    } else {
+      timerEl.textContent = "Time's up!";
+      clearInterval(timeInterval);
+      endScore();
+    }
+  }, 1000)
 };
 
 function showQuestion() {
@@ -61,7 +71,7 @@ function showQuestion() {
       if (answer === currentQuestion.answer) {
         score += 1;
       } else {
-        // timer to go down faster
+        timeLeft -= 10;
       };
       nextQuestion();
     });
@@ -71,11 +81,18 @@ function showQuestion() {
   };
 };
 
+function nextQuestion() {
+  var node = document.getElementById("answer-buttons");
+  node.innerHTML = "";
+  showQuestion(currentQuestion);
+};
+
 function endScore() {
   questionContainerEl.classList.add("hide");
   yourScoreEl.classList.remove("hide");
   enterInitialsEl.classList.remove("hide");
   saveScoreEl.classList.remove("hide");
+  timeLeft = 0;
   showScore();
 };
 
@@ -93,8 +110,6 @@ saveScoreEl.addEventListener("click", function (event) {
 
   // return window.location.assign("./highscore.html");
   renderLastRegistered();
-
-
 });
 
 function renderLastRegistered() {
@@ -108,13 +123,7 @@ function renderLastRegistered() {
   saveScoreEl.classList.add("hide");
   yourScoreEl.classList.add("hide");
   enterInitialsEl.classList.add("hide");
-  startButtonEl.classList.remove("hide");
-
-
-
-
-  // startButton.innerText = "Restart";
-  // startButton.classList.remove("hide");
+  // startButtonEl.classList.remove("hide");
 };
 
 
@@ -133,6 +142,16 @@ var questions = [
     ques: "What is JavaScript?3",
     options: ["answer 9", "answer 10", "answer 11", "answer 12"],
     answer: "answer 12"
+  },
+  {
+    ques: "What is JavaScript?4",
+    options: ["answer 13", "answer 14", "answer 15", "answer 16"],
+    answer: "answer 14"
+  },
+  {
+    ques: "What is JavaScript?5",
+    options: ["answer 17", "answer 18", "answer 19", "answer 20"],
+    answer: "answer 17"
   },
   {
     ques: "What is JavaScript?4",
