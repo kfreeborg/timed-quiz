@@ -129,38 +129,38 @@ function renderLastRegistered() {
 
 var questions = [
   {
-    ques: "What is JavaScript?1",
-    options: ["answer 1", "answer 2", "answer 3", "answer 4"],
-    answer: "answer 1"
+    ques: "When a user views a page containing a JavaScript program, which machine actually executes the script?",
+    options: ["The User's machine running a Web browser.", "The Web server", "A central machine deep within Netscape's corporate offices", "None of the above"],
+    answer: "The User's machine running a Web browser"
   },
   {
-    ques: "What is JavaScript?2",
-    options: ["answer 5", "answer 6", "answer 7", "answer 8"],
-    answer: "answer 7"
+    ques: "What are variables used for in JavaScript Programs",
+    options: ["Varying randomly", "Causing high-school algebra flashbacks", "Storing numbers, dates, or other values", "None of the above"],
+    answer: "Storing numbers, dates, or other values"
   },
   {
-    ques: "What is JavaScript?3",
-    options: ["answer 9", "answer 10", "answer 11", "answer 12"],
-    answer: "answer 12"
+    ques: "What should appear at the very end of your JavaScript <script> tag?",
+    options: ["<script", "Once upon a time", "The End", "</script>"],
+    answer: "</script>"
   },
   {
-    ques: "What is JavaScript?4",
-    options: ["answer 13", "answer 14", "answer 15", "answer 16"],
-    answer: "answer 14"
+    ques: "What is the correct JavaScript syntax to write 'Hello World'?",
+    options: ["System.out.println('Hello World')", "printIn('Hello World')", "document.write('Hello World')", "respone.write('Hello World')"],
+    answer: "document.write('Hello World')"
   },
   {
-    ques: "What is JavaScript?5",
-    options: ["answer 17", "answer 18", "answer 19", "answer 20"],
-    answer: "answer 17"
+    ques: "Inside which HTML element do we put the JavaScript?",
+    options: ["<js>", "<scripting>", "<script>", "You don't"],
+    answer: "<script>"
   },
   {
-    ques: "What is JavaScript?4",
-    options: ["answer 13", "answer 14", "answer 15", "answer 16"],
-    answer: "answer 14"
+    ques: "What does the <noscript> tag do?",
+    options: ["Enclose text to be displayed by non-JavaScript browsers.", "Sings TLC's 'I don't want no scrpits'", "Describes certain low-budget movies.", "Prevents scripts on the page from executing."],
+    answer: "Enclose text to be displayed by non-JavaScript browsers."
   },
   {
-    ques: "What is JavaScript?5",
-    options: ["answer 17", "answer 18", "answer 19", "answer 20"],
-    answer: "answer 17"
+    ques: "Which of the following best describes JavaScript?",
+    options: ["The bane of my existance", "a scripting language precompiled in the browser.", "a compiled scripting language.", "an object-oriented scripting language."],
+    answer: "an object-oriented scripting language."
   }
 ];
