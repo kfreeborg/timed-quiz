@@ -4,4 +4,4 @@
 
 This site was built using [GitHub Pages](https://kfreeborg.github.io/timed-quiz/). 
 
-![Getting Started](/Capture.JPG)
+![Getting Started](./Capture.JPG)
