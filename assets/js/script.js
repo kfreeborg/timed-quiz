@@ -33,7 +33,6 @@ function startQuiz() {
 var timeLeft = 60
 
 function countdown() {
-
   var timeInterval = setInterval(function () {
     if (timeLeft >= 1) {
       timerEl.textContent = timeLeft;
@@ -123,9 +122,7 @@ function renderLastRegistered() {
   saveScoreEl.classList.add("hide");
   yourScoreEl.classList.add("hide");
   enterInitialsEl.classList.add("hide");
-  // startButtonEl.classList.remove("hide");
 };
-
 
 var questions = [
   {
